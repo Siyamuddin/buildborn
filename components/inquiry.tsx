@@ -28,7 +28,7 @@ const emptyFields: InquiryFields = {
   note: "",
 }
 
-const fieldClass = "mt-2 h-12 w-full border border-line bg-sheet px-3 text-base text-ink"
+const fieldClass = "mt-2 h-12 w-full rounded-xl border border-line bg-sheet px-4 text-base text-ink"
 
 export const Inquiry = ({ email, copy, submitLabel }: InquiryProps) => {
   const [fields, setFields] = useState<InquiryFields>(emptyFields)
@@ -76,7 +76,7 @@ export const Inquiry = ({ email, copy, submitLabel }: InquiryProps) => {
       <Frame className="grid gap-12 py-20 md:grid-cols-12 md:py-28">
         <div className="md:col-span-5">
           <SectionIndex index="06" label="Contact" />
-          <h2 className="mt-8 font-serif text-[clamp(2rem,4vw,2.75rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-ink">
+          <h2 className="mt-8 text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-[-0.04em] text-ink">
             {copy.heading}
           </h2>
           <p className="mt-5 max-w-sm text-base leading-relaxed text-muted">{copy.body}</p>
@@ -150,12 +150,12 @@ export const Inquiry = ({ email, copy, submitLabel }: InquiryProps) => {
               rows={6}
               value={fields.note}
               onChange={(event) => handleChange("note", event.target.value)}
-              className="mt-2 w-full border border-line bg-sheet px-3 py-3 text-base leading-relaxed text-ink"
+              className="mt-2 w-full rounded-xl border border-line bg-sheet px-4 py-3 text-base leading-relaxed text-ink"
               aria-invalid={errors.note ? true : undefined}
               aria-describedby={errors.note ? "note-error" : undefined}
             />
           </Field>
-          <button type="submit" className="mt-6 inline-flex h-12 items-center bg-accent px-5 text-sm text-paper">
+          <button type="submit" className="mt-6 inline-flex h-11 items-center rounded-full bg-accent px-5 text-sm text-white">
             {submitLabel}
           </button>
           {opened ? (

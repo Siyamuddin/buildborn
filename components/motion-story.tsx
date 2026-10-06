@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import type { Beat } from "@/lib/types"
 
-const LOOP_SECONDS = 11.128
+const LOOP_SECONDS = 11.938
 
 type MotionStoryProps = {
   beats: Beat[]
@@ -25,7 +25,7 @@ export const MotionStory = ({ beats, audioUrl, narration }: MotionStoryProps) =>
   const [beatIndex, setBeatIndex] = useState(0)
   const [soundOn, setSoundOn] = useState(false)
   const [reduced, setReduced] = useState(false)
-  const frames = beats.length > 0 ? beats : [{ kicker: "01", title: "Buildborn", line: narration }]
+  const frames = beats.length > 0 ? beats : [{ kicker: "01", title: "Buildvorn", line: narration }]
   const active = frames[Math.min(beatIndex, frames.length - 1)]
 
   useEffect(() => {
@@ -95,7 +95,7 @@ export const MotionStory = ({ beats, audioUrl, narration }: MotionStoryProps) =>
       <div className="relative flex min-h-[420px] flex-col justify-between overflow-hidden border border-line-dark px-6 py-7 md:min-h-[520px] md:px-8 md:py-9">
         <div aria-hidden="true" className="flex items-center justify-between text-[11px] uppercase tracking-[0.22em] text-mist">
           <span>{reduced ? frames[0]?.kicker : active?.kicker}</span>
-          <span>Buildborn</span>
+          <span>Buildvorn</span>
         </div>
         <div className="relative mt-8 min-h-[180px] flex-1" aria-hidden="true">
           {(reduced ? frames.slice(0, 1) : frames).map((beat, index) => (
