@@ -1,6 +1,6 @@
 import type { SiteContent } from "@/lib/types"
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://buildborn.dev"
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://buildvorn.com"
 
 export const navLinks = [
   { href: "#products", label: "Products" },
@@ -12,32 +12,32 @@ export const inquiryKinds = ["Website", "Mobile app", "Automation", "Not sure ye
 
 export const fallbackContent: SiteContent = {
   settings: {
-    companyName: "Buildborn",
-    domain: "buildborn.dev",
-    email: "hello@buildborn.dev",
+    companyName: "Buildvorn",
+    domain: "buildvorn.com",
+    email: "hello@buildvorn.com",
     legalLine:
-      "Buildborn. Add the registered legal name, jurisdiction, and registration number here.",
-    metaTitle: "Buildborn — software we ship, and keep",
+      "Buildvorn. Add the registered legal name, jurisdiction, and registration number here.",
+    metaTitle: "Buildvorn — software we ship, and keep",
     metaDescription:
-      "Buildborn ships its own software products and builds websites, mobile apps, and automation for clients.",
+      "Buildvorn ships its own software products and builds websites, mobile apps, and automation for clients.",
   },
   hero: {
     eyebrow: "Studio",
     headline: "Software we ship,\nand keep.",
     subhead:
-      "Buildborn builds products of its own, and takes on websites, mobile apps, and automation for people who want something made.",
+      "Buildvorn builds products of its own, and takes on websites, mobile apps, and automation for people who want something made.",
     primaryCtaLabel: "Contact",
     primaryCtaHref: "#inquiry",
     secondaryCtaLabel: "See products",
     secondaryCtaHref: "#products",
-    audioUrl: "/audio/buildborn-vo.mp3",
+    audioUrl: "/audio/buildvorn-vo.mp3",
     narration:
-      "Buildborn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.",
+      "Buildvorn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.",
     beats: [
       {
         kicker: "01",
         title: "Own products",
-        line: "Buildborn ships software products of its own.",
+        line: "Buildvorn ships software products of its own.",
       },
       {
         kicker: "02",
@@ -56,7 +56,7 @@ export const fallbackContent: SiteContent = {
       sort: 1,
       name: "First product",
       summary: "A product this studio will operate. The public name is not set yet.",
-      outcome: "A system we keep running, with a named owner inside Buildborn.",
+      outcome: "A system we keep running, with a named owner inside Buildvorn.",
       stack: "Stack placeholder",
       status: "Placeholder",
       theme: "dark",
@@ -176,7 +176,7 @@ export const fallbackContent: SiteContent = {
     {
       sort: 5,
       question: "Who does the work?",
-      answer: "The same people who maintain Buildborn’s own products. The work is not passed to an unnamed bench.",
+      answer: "The same people who maintain Buildvorn’s own products. The work is not passed to an unnamed bench.",
     },
   ],
   engagements: [
@@ -193,13 +193,13 @@ export const fallbackContent: SiteContent = {
     {
       sort: 3,
       title: "Product partnership",
-      body: "We keep operating a product with you. The same practice we use for software Buildborn ships itself.",
+      body: "We keep operating a product with you. The same practice we use for software Buildvorn ships itself.",
     },
   ],
   sections: {
     products: {
       heading: "Selected work",
-      body: "Products Buildborn intends to run. Each name below is a placeholder until that product is public.",
+      body: "Products Buildvorn intends to run. Each name below is a placeholder until that product is public.",
     },
     services: {
       heading: "Client work",
