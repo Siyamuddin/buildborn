@@ -1,12 +1,12 @@
 insert into public.site_settings (id, company_name, domain, email, legal_line, meta_title, meta_description)
 values (
   1,
-  'Buildborn',
-  'buildborn.dev',
-  'hello@buildborn.dev',
-  'Buildborn. Add the registered legal name, jurisdiction, and registration number here.',
-  'Buildborn — software we ship, and keep',
-  'Buildborn ships its own software products and builds websites, mobile apps, and automation for clients.'
+  'Buildvorn',
+  'buildvorn.com',
+  'hello@buildvorn.com',
+  'Buildvorn. Add the registered legal name, jurisdiction, and registration number here.',
+  'Buildvorn — software we ship, and keep',
+  'Buildvorn ships its own software products and builds websites, mobile apps, and automation for clients.'
 );
 
 insert into public.hero (
@@ -18,15 +18,15 @@ insert into public.hero (
   1,
   'Studio',
   E'Software we ship,\nand keep.',
-  'Buildborn builds products of its own, and takes on websites, mobile apps, and automation for people who want something made.',
+  'Buildvorn builds products of its own, and takes on websites, mobile apps, and automation for people who want something made.',
   'Contact',
   '#inquiry',
   'See products',
   '#products',
-  '/audio/buildborn-vo.mp3',
-  'Buildborn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.',
+  '/audio/buildvorn-vo.mp3',
+  'Buildvorn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.',
   '[
-    {"kicker":"01","title":"Own products","line":"Buildborn ships software products of its own."},
+    {"kicker":"01","title":"Own products","line":"Buildvorn ships software products of its own."},
     {"kicker":"02","title":"Client work","line":"Websites, mobile apps, and automation."},
     {"kicker":"03","title":"The standard","line":"Clear craft. Real shipping. Built to last."}
   ]'::jsonb
@@ -34,7 +34,7 @@ insert into public.hero (
 
 insert into public.products (sort, name, summary, outcome, stack, status, theme, image_alt, metric_label, metric_value)
 values
-  (1, 'First product', 'A product this studio will operate. The public name is not set yet.', 'A system we keep running, with a named owner inside Buildborn.', 'Stack placeholder', 'Placeholder', 'dark', 'Placeholder surface for the first product', 'Status', 'Not yet public'),
+  (1, 'First product', 'A product this studio will operate. The public name is not set yet.', 'A system we keep running, with a named owner inside Buildvorn.', 'Stack placeholder', 'Placeholder', 'dark', 'Placeholder surface for the first product', 'Status', 'Not yet public'),
   (2, 'Second product', 'A second product, still private. The line below is a stand-in for the outcome.', 'A narrower job, finished, and left in daily use.', 'Stack placeholder', 'Placeholder', 'light', 'Placeholder surface for the second product', 'Status', 'Not yet public'),
   (3, 'Third product', 'Held for a later release. Replace this card when the product has a name.', 'Work we can point to, because we still run it.', 'Stack placeholder', 'Placeholder', 'dark', 'Placeholder surface for the third product', 'Status', 'Not yet public');
 
@@ -67,17 +67,17 @@ values
   (2, 'How does a project start?', 'A short note is enough. We reply with what we think the work is. Nothing is built until the scope is written and agreed.'),
   (3, 'How long does it take?', 'It follows the scope. A small site and a multi-month product are not the same length. We name a date before the build starts, and we do not invent one here.'),
   (4, 'How is an engagement held?', 'Usually a fixed scope. Some work continues as care after launch. Some products we keep operating with you. There is no seat-based plan on this page.'),
-  (5, 'Who does the work?', 'The same people who maintain Buildborn products. The work is not passed to an unnamed bench.');
+  (5, 'Who does the work?', 'The same people who maintain Buildvorn products. The work is not passed to an unnamed bench.');
 
 insert into public.engagements (sort, title, body)
 values
   (1, 'Fixed scope', 'One outcome, one boundary, one date. The right shape for a site, a first app version, or a single workflow.'),
   (2, 'Care after launch', 'A defined period after release. We watch the system in use and fix what the first weeks reveal.'),
-  (3, 'Product partnership', 'We keep operating a product with you. The same practice we use for software Buildborn ships itself.');
+  (3, 'Product partnership', 'We keep operating a product with you. The same practice we use for software Buildvorn ships itself.');
 
 insert into public.section_copy (key, heading, body)
 values
-  ('products', 'Selected work', 'Products Buildborn intends to run. Each name below is a placeholder until that product is public.'),
+  ('products', 'Selected work', 'Products Buildvorn intends to run. Each name below is a placeholder until that product is public.'),
   ('services', 'Client work', 'Three forms. The scope is written first. The result is something a person can own.'),
   ('proof', 'Placeholder proof', 'Logos, figures, and the quotation are stand-ins. Replace them when the work can be named.'),
   ('method', 'How we work', 'The same sequence for our products and for client work.'),

@@ -5,11 +5,11 @@ import { fileURLToPath } from "node:url"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const audioDir = join(root, "public", "audio")
-const mp3Path = join(audioDir, "buildborn-vo.mp3")
+const mp3Path = join(audioDir, "buildvorn-vo.mp3")
 const gzDir = join(audioDir, "gz")
 const remoteUrl =
-  "https://hxxyhcfnsvyynpktxpku.supabase.co/storage/v1/object/public/audio/buildborn-vo.mp3"
-const expectedBytes = 195638
+  "https://hxxyhcfnsvyynpktxpku.supabase.co/storage/v1/object/public/audio/buildvorn-vo.mp3"
+const expectedBytes = 208595
 
 const fromGzipParts = () => {
   if (!existsSync(gzDir)) return null
