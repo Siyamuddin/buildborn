@@ -1,32 +1,33 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs"
+import { gunzipSync } from "node:zlib"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 const audioDir = join(root, "public", "audio")
 const mp3Path = join(audioDir, "buildborn-vo.mp3")
-const b64Path = join(audioDir, "buildborn-vo.mp3.b64")
-const partsDir = join(audioDir, "parts")
+const gzDir = join(audioDir, "gz")
 
 if (existsSync(mp3Path)) {
   process.exit(0)
 }
 
-let encoded = ""
-
-if (existsSync(b64Path)) {
-  encoded = readFileSync(b64Path, "utf8")
-} else if (existsSync(partsDir)) {
-  const names = readdirSync(partsDir)
-    .filter((name) => name.endsWith(".b64"))
-    .sort()
-  encoded = names.map((name) => readFileSync(join(partsDir, name), "utf8")).join("")
-}
-
-if (!encoded.trim()) {
-  console.error("Missing public/audio/buildborn-vo.mp3 and its base64 source")
+if (!existsSync(gzDir)) {
+  console.error("Missing public/audio/buildborn-vo.mp3 and public/audio/gz")
   process.exit(1)
 }
 
+const names = readdirSync(gzDir)
+  .filter((name) => name.endsWith(".b64"))
+  .sort()
+
+if (names.length === 0) {
+  console.error("No voiceover parts in public/audio/gz")
+  process.exit(1)
+}
+
+const encoded = names.map((name) => readFileSync(join(gzDir, name), "utf8")).join("")
+const mp3 = gunzipSync(Buffer.from(encoded.replace(/\s/g, ""), "base64"))
+
 mkdirSync(audioDir, { recursive: true })
-writeFileSync(mp3Path, Buffer.from(encoded.replace(/\s/g, ""), "base64"))
+writeFileSync(mp3Path, mp3)
