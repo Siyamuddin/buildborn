@@ -1,34 +1,36 @@
-# Buildborn
+# Buildvorn
 
-Company site for [Buildborn](https://buildborn.dev). The studio ships its own software and takes client work: websites, mobile apps, and automation.
+Company site for [Buildvorn](https://buildvorn.com). The studio ships its own software and takes client work: websites, mobile apps, and automation.
 
-This site was written for Buildborn. It is not a theme, and it does not reuse another studio’s layout or copy.
+This site was written for Buildvorn. It is not a theme, and it does not reuse another studio’s layout or copy.
 
 The page is one homepage. Text, products, services, proof, questions, and the hero narration path are stored in Supabase, with a coded fallback if the database is unreachable.
 
 ## Brand system
 
-- **Wordmark.** `Buildborn`, small caps, wide tracking, next to a two-corner registration mark (`components/mark.tsx`, `app/icon.svg`).
+- **Wordmark.** `Buildvorn` in the system sans, next to a two-corner registration mark (`components/mark.tsx`, `app/icon.svg`).
 - **Index rule.** Sections are numbered `00`–`06`, then a short rule and a label (`components/section-index.tsx`).
-- **Type.** Newsreader for headlines. Geist for interface text.
-- **Color.** Warm paper `#f6f3ed`, ink `#1a1916`, one blue `#1c4f7a` for the primary action and links. Dark canvases alternate with paper on the product tiles.
-- **Motion.** A three-beat story in the hero, timed to `public/audio/buildborn-vo.mp3` (about 11.1 seconds). It loops silently. Sound starts only from the Unmute control.
+- **Type.** System UI first (`system-ui`, `-apple-system`), then Inter. No display serif.
+- **Color.** Near-white `#f5f5f7`, near-black `#1d1d1f`, one blue `#0066cc` for actions and links. Product tiles alternate light and dark, full bleed.
+- **Motion.** A three-beat story in the hero, timed to `public/audio/buildvorn-vo.mp3` (about 11.9 seconds). It loops silently. Sound starts only from the Unmute control.
 
 ## Voiceover
 
-File: `public/audio/buildborn-vo.mp3`
+File: `public/audio/buildvorn-vo.mp3`
+
+`npm run dev` and `npm run build` run `scripts/decode-audio.mjs` first. If the mp3 is not already in `public/audio`, the script downloads the studio copy from the public Supabase Storage object `audio/buildvorn-vo.mp3` (project `hxxyhcfnsvyynpktxpku`). Writes to that bucket are locked. The object is the ElevenLabs file, 208,595 bytes, about 11.9 seconds.
 
 Spoken line:
 
-> Buildborn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.
+> Buildvorn ships software products of its own. We also design and build for clients — websites, mobile apps, and automation. Clear craft. Real shipping. Built to last.
 
 The control sits on the hero story, bottom right. Default is muted. Unmute is a button, so the browser never starts audio on its own. `prefers-reduced-motion` holds the story on the first frame and does not unmute by itself.
 
-To point the hero at a different file, update `hero.audio_url` in Supabase. A root-relative path such as `/audio/buildborn-vo.mp3` or a full `https://` URL both work. If the database is down, the site uses the file above.
+To point the hero at a different file, update `hero.audio_url` in Supabase. A root-relative path such as `/audio/buildvorn-vo.mp3` or a full `https://` URL both work. If the database is down, the site uses the file above.
 
 ## Edit content
 
-Supabase project **buildborn**, ref `hxxyhcfnsvyynpktxpku`, region `ap-northeast-2`.
+Supabase project **buildvorn**, ref `hxxyhcfnsvyynpktxpku`, region `ap-northeast-2`.
 
 Dashboard: SQL editor, as the database owner. The anon key can only read published rows. It cannot insert, update, or delete.
 
@@ -48,7 +50,7 @@ Example:
 
 ```sql
 update public.site_settings
-set legal_line = 'Buildborn Co., Ltd. — Seoul — registration number'
+set legal_line = 'Buildvorn Co., Ltd. — Seoul — registration number'
 where id = 1;
 
 update public.products
@@ -91,8 +93,8 @@ npm run build
 
 The project is a Next.js 15 app. On Vercel, framework preset **Next.js**, root directory at the repository root. Set the three `NEXT_PUBLIC_` variables for Production.
 
-`buildborn.dev` is the intended domain. `buildborn.com` is not used. Attach `buildborn.dev` in the Vercel project when the DNS records are ready. This repository does not register or buy the domain.
+`buildvorn.com` is the intended domain. Attach it on the Vercel project when you are ready to point DNS. This repository does not register or buy the domain.
 
 ## Contact
 
-The inquiry form validates in the browser and opens the visitor’s mail app to `hello@buildborn.dev` (or whatever `site_settings.email` says). No mail API is required for the first deploy.
+The inquiry form validates in the browser and opens the visitor’s mail app to `hello@buildvorn.com` (or whatever `site_settings.email` says). No mail API is required for the first deploy.

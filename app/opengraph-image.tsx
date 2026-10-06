@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 import { getContent } from "@/lib/content"
 
-export const alt = "Buildborn"
+export const alt = "Buildvorn"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -18,8 +18,8 @@ const OpenGraphImage = async () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f4f2ec",
-          color: "#121211",
+          background: "#f5f5f7",
+          color: "#1d1d1f",
           padding: "72px",
         }}
       >
@@ -31,7 +31,7 @@ const OpenGraphImage = async () => {
             <span key={line}>{line}</span>
           ))}
         </div>
-        <div style={{ display: "flex", fontSize: 22, color: "#4a463f" }}>{content.settings.domain}</div>
+        <div style={{ display: "flex", fontSize: 22, color: "#0066cc" }}>{content.settings.domain}</div>
       </div>
     ),
     { ...size },

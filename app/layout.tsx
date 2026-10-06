@@ -1,21 +1,14 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-import { Geist, Newsreader } from "next/font/google"
+import { Inter } from "next/font/google"
 import { getContent } from "@/lib/content"
 import { siteUrl } from "@/lib/fallback"
 import "./globals.css"
 
-const sans = Geist({
+const sans = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
+  variable: "--font-inter",
   display: "swap",
-})
-
-const serif = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-newsreader",
-  display: "swap",
-  weight: ["500", "600"],
 })
 
 export const revalidate = 60
@@ -62,7 +55,7 @@ const HomeLayout = async ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={sans.variable}>
       <body className="bg-paper font-sans text-ink antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a
