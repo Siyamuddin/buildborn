@@ -6,3 +6,5 @@ out
 .env*.local
 next-env.d.ts
 *.tsbuildinfo
+public/audio/*.mp3
+public/audio/*.b64
