@@ -12,7 +12,7 @@ export const Testimonial = ({ item }: TestimonialProps) => {
     <section aria-label="Testimonial" className="border-b border-line">
       <Frame className="py-20 md:py-28">
         <figure className="max-w-3xl">
-          <blockquote className="font-serif text-[clamp(1.7rem,3vw,2.4rem)] font-medium leading-[1.25] tracking-[-0.03em] text-ink">
+          <blockquote className="text-[clamp(1.7rem,3vw,2.5rem)] font-semibold leading-[1.2] tracking-[-0.035em] text-ink">
             {item.quote}
           </blockquote>
           <figcaption className="mt-8 text-sm text-muted">

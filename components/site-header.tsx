@@ -24,15 +24,15 @@ export const SiteHeader = ({ name }: SiteHeaderProps) => {
   const handleCloseMenu = () => setOpen(false)
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-paper">
-      <div className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between px-5 md:px-8">
-        <a href="#content" className="flex items-center gap-3 text-ink" aria-label={`${name} home`}>
+    <header className="sticky top-0 z-20 border-b border-line/80 bg-sheet/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-12 w-full max-w-[1120px] items-center justify-between px-5 md:px-8">
+        <a href="#content" className="flex items-center gap-2.5 text-ink" aria-label={`${name} home`}>
           <Mark />
-          <span className="text-[13px] tracking-[0.16em] uppercase">{name}</span>
+          <span className="text-[15px] font-medium tracking-[-0.02em]">{name}</span>
         </a>
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm text-ink">
+            <a key={link.href} href={link.href} className="text-[13px] text-ink">
               {link.label}
             </a>
           ))}
